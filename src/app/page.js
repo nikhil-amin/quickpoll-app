@@ -53,14 +53,14 @@ export default function HomePage() {
                     value={pollCode}
                     onChange={(e) => setPollCode(e.target.value.toUpperCase())}
                     placeholder="Enter poll ID..."
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg font-mono tracking-wider"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg font-mono tracking-wider text-gray-900 bg-gray-50 transition"
                     maxLength={50}
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={!pollCode.trim()}
-                  className="w-full bg-green-600 text-white py-3 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 disabled:bg-gray-400 disabled:cursor-not-allowed font-medium text-lg"
+                  className="w-full bg-green-600 text-white py-3 px-4 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 disabled:bg-gray-400 disabled:cursor-not-allowed font-medium text-lg transition"
                 >
                   Join Poll
                 </button>

@@ -233,7 +233,7 @@ export default function PollVoter({ pollId }) {
                 key={option.$id}
                 onClick={() => handleVote(option.$id)}
                 disabled={voting}
-                className="w-full p-4 text-left bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full p-4 text-left bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-gray-900"
               >
                 <div className="flex items-center">
                   <span className="flex-1 font-medium">{option.text}</span>
@@ -284,9 +284,9 @@ export default function PollVoter({ pollId }) {
                   </div>
                   
                   {/* Progress Bar */}
-                  <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div className="w-full bg-gray-200 rounded-full h-3">
                     <div 
-                      className={`h-2 rounded-full transition-all duration-1000 ${
+                      className={`h-3 rounded-full transition-all duration-1000 ${
                         isSelected ? 'bg-blue-600' : 'bg-gray-400'
                       }`}
                       style={{ width: `${percentage}%` }}
@@ -315,13 +315,15 @@ export default function PollVoter({ pollId }) {
             <div className="flex items-center gap-2">
               <input
                 type="text"
-                value={window.location.href}
+                value={typeof window !== 'undefined' ? window.location.href : ''}
                 readOnly
-                className="flex-1 px-3 py-1 text-xs border border-gray-300 rounded bg-gray-50"
+                className="flex-1 px-3 py-2 text-xs text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                style={{ minWidth: 0 }}
               />
               <button
                 onClick={() => navigator.clipboard.writeText(window.location.href)}
-                className="px-3 py-1 text-xs bg-blue-600 text-white rounded hover:bg-blue-700"
+                className="px-3 py-2 text-xs bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                aria-label="Copy poll link"
               >
                 Copy
               </button>
@@ -329,7 +331,7 @@ export default function PollVoter({ pollId }) {
           </div>
           
           <div className="text-right">
-            <p className="text-xs text-gray-500">Poll ID: {pollId.substring(0, 8)}...</p>
+            <p className="text-xs text-gray-900 font-mono break-all">Poll ID: {pollId.substring(0, 8)}...</p>
           </div>
         </div>
       </div>

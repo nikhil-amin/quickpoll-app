@@ -23,7 +23,7 @@ export default function PollPage({ params }) {
               </Link>
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">QuickPoll</h1>
-                <p className="text-gray-600">Poll ID: {id.substring(0, 8)}...</p>
+                <p className="text-gray-900 font-mono">Poll ID: {id.substring(0, 8)}...</p>
               </div>
             </div>
           </div>

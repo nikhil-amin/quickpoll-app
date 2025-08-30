@@ -107,7 +107,7 @@ export default function PollCreator({ onPollCreated }) {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="What's your question?"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg text-gray-900 bg-gray-50 transition"
             required
             maxLength={200}
           />
@@ -123,7 +123,7 @@ export default function PollCreator({ onPollCreated }) {
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Add more context to your poll..."
             rows={3}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 bg-gray-50 transition"
             maxLength={1000}
           />
         </div>
@@ -140,7 +140,7 @@ export default function PollCreator({ onPollCreated }) {
                 value={option}
                 onChange={(e) => updateOption(index, e.target.value)}
                 placeholder={`Option ${index + 1}`}
-                className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 bg-gray-50 transition"
                 required={index < 2}
                 maxLength={500}
               />
@@ -177,7 +177,7 @@ export default function PollCreator({ onPollCreated }) {
             <select
               value={expiresIn}
               onChange={(e) => setExpiresIn(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 bg-gray-50 transition"
             >
               <option value="1">1 Hour</option>
               <option value="6">6 Hours</option>
@@ -193,7 +193,7 @@ export default function PollCreator({ onPollCreated }) {
               id="anonymous"
               checked={isAnonymous}
               onChange={(e) => setIsAnonymous(e.target.checked)}
-              className="mr-2"
+              className="mr-2 accent-blue-600"
             />
             <label htmlFor="anonymous" className="text-sm text-gray-700">
               Anonymous voting
@@ -205,7 +205,7 @@ export default function PollCreator({ onPollCreated }) {
         <button
           type="submit"
           disabled={loading || !title.trim() || options.filter(opt => opt.trim()).length < 2}
-          className="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-400 disabled:cursor-not-allowed font-medium"
+          className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-400 disabled:cursor-not-allowed font-medium text-lg transition"
         >
           {loading ? 'Creating Poll...' : 'Create Poll'}
         </button>
