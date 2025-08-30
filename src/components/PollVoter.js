@@ -195,7 +195,7 @@ export default function PollVoter({ pollId }) {
       <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg">
         <div className="text-center text-red-600">
           <h2 className="text-xl font-semibold mb-2">Poll Not Found</h2>
-          <p>This poll doesn't exist or has been deleted.</p>
+          <p>This poll doesn&apos;t exist or has been deleted.</p>
         </div>
       </div>
     );
